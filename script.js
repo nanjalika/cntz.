@@ -82,7 +82,7 @@ function showSlide(){
   if(index>=slides.length){index=0;}
 }
 
-setInterval(showSlide,1500);
+setInterval(showSlide,2500);
 let t=document.querySelectorAll(".testimonial");
 let i=0;
 
