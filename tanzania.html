@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中坦达资 | INVEST IN TANZANIA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <style>
+    .opportunity-card {
+        background: var(--navy-light);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s;
+    }
+    .opportunity-card:hover { transform: translateY(-5px); }
+    .opp-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    .opp-content { padding: 25px; }
+    .tag {
+        background: var(--white);
+        color: var(--navy);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .link-box {
+        margin-top: 15px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 15px;
+    }
+    .external-link {
+        color: var(--paleblue);
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .external-link:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container flex">
+    <div class="logo">
+        <img src="images/logo.png" alt="中坦达资logo">
+        <h2 data-en="Zhongtan Dazi" data-zh="中坦达资">中坦达资</h2>
+    </div>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-zh="首页"></a>
+      <a href="services.html" data-en="Services" data-zh="服务"></a>
+      <a href="tanzania.html" data-en="Tanzania" data-zh="坦桑尼亚"></a>
+      <a href="contact.html" data-en="Contact Us" data-zh="联系我们"></a>
+      <button id="langToggle">中文</button>
+    </nav>
+    <button id="hamburger">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-content">
+      <span class="close-menu" onclick="closeMenu()">×</span>
+      <nav class="mobile-nav">
+        <a href="index.html" data-en="Home" data-zh="首页" onclick="closeMenu()"></a>
+        <a href="services.html" data-en="Services" data-zh="服务" onclick="closeMenu()"></a>
+        <a href="tanzania.html" data-en="Tanzania" data-zh="坦桑尼亚" onclick="closeMenu()"></a>
+        <a href="contact.html" data-en="Contact Us" data-zh="联系我们" onclick="closeMenu()"></a>
+      </nav>
+      <button id="langToggleMobile">中文</button>
+    </div>
+  </div>  
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1 style="text-align: center; font-size: 3rem; margin-bottom: 20px;" 
+        data-en="Invest in Tanzania" 
+        data-zh="投资坦桑尼亚"></h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;" 
+       data-en="Tanzania is one of Africa's fastest-growing economies. With a strategic location on the Indian Ocean and a market of 67 million people, it is the ideal gateway for Chinese investment in East Africa."
+       data-zh="坦桑尼亚是非洲增长最快的经济体之一。凭借印度洋的战略地位和6700万人口的市场，它是中国在东非投资的理想门户。"></p>
+
+    <div class="grid">
+      <div class="opportunity-card">
+        <img src="images/tanzania-mining.jpg" alt="Mining" class="opp-image">
+        <div class="opp-content">
+          <span class="tag" data-en="Natural Resources" data-zh="自然资源"></span>
+          <h3 data-en="Mining & Processing" data-zh="矿业与加工"></h3>
+          <p data-en="Beyond extraction, the government now prioritizes 'Value Addition'. Opportunities exist in mineral refineries and processing centers for gold, graphite, and nickel."
+             data-zh="除了开采，政府现在优先考虑“增值”。黄金、石墨和镍的精

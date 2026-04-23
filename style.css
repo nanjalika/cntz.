@@ -1,0 +1,317 @@
+/* --- 1. VARIABLES & CORE SETTINGS --- */
+:root {
+    --navy: #0b1e3c;
+    --navy-light: #123a6f;
+    --paleblue: #e6f0ff;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- 2. SHARED HEADER & NAVIGATION --- */
+.header {
+    background: var(--navy);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--paleblue);
+}
+
+/* --- 3. HERO & SECTIONS --- */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(11,30,60,0.7), rgba(11,30,60,0.85)), 
+                url('images/1.jpg') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.dark {
+    background: var(--navy-light);
+}
+
+/* --- 4. GRID & CARDS (Universal) --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--navy-light);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--paleblue);
+    box-shadow: var(--shadow);
+}
+
+/* --- 5. STATS & COUNTERS --- */
+.stat {
+    text-align: center;
+}
+
+.counter {
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+/* --- 6. BUTTONS & INTERACTIVES --- */
+button, .btn, .btn-download, input[type="submit"] {
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover, input[type="submit"]:hover {
+    background: var(--paleblue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- 7. TEAM & LEADERSHIP --- */
+.member-card {
+    background: var(--navy-light);
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 5px solid var(--paleblue);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--white);
+}
+
+.member-name { color: var(--white); font-size: 1.5rem; margin-bottom: 5px; }
+.member-position { color: var(--paleblue); font-weight: bold; display: block; margin-bottom: 15px; }
+.member-desc { font-size: 0.9rem; opacity: 0.9; }
+
+/* --- 8. TESTIMONIALS --- */
+.testimonial-box {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    height: 180px;
+    border: 2px solid var(--paleblue);
+    border-radius: 15px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.testimonial {
+    position: absolute;
+    width: calc(100% - 60px);
+    opacity: 0;
+    transition: all 0.8s ease;
+    text-align: center;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+/* --- 9. TANZANIA OPPORTUNITY CARDS --- */
+.opportunity-card {
+    background: var(--navy-light);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.opp-image { width: 100%; height: 200px; object-fit: cover; }
+.opp-content { padding: 20px; }
+.tag {
+    background: var(--paleblue);
+    color: var(--navy);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- 10. FORMS & CONTACT --- */
+.form-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-box input, .form-box select, .form-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 6px;
+}
+
+/* --- 11. DOWNLOADS --- */
+.downloads-box {
+    background: var(--navy-light);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.download-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* --- 12. POPUPS --- */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(11, 30, 60, 0.95);
+    z-index: 2000;
+}
+
+.popup-content {
+    background: var(--navy-light);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    margin: 10% auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* --- 13. FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer a { color: var(--paleblue); text-decoration: none; margin: 0 10px; }
+
+/* --- 14. MOBILE MENU & RESPONSIVENESS --- */
+#hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--navy);
+    z-index: 3000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.mobile-nav a { font-size: 1.5rem; }
+
+@media (max-width: 768px) {
+    nav { display: none; }
+    #hamburger { display: block; }
+    .hero h1 { font-size: 2rem !important; }
+    .counter { font-size: 2.5rem; }
+    .container { width: 90%; }
+}

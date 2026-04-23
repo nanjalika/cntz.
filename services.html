@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中坦达资 | SERVICES</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <style>
+    /* Custom spacing for the description section */
+    .intro-text {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--paleblue);
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container flex">
+    <div class="logo">
+        <img src="images/logo.png" alt="中坦达资logo">
+        <h2 data-en="Zhongtan Dazi" data-zh="中坦达资">中坦达资</h2>
+    </div>
+
+    <nav>
+      <a href="index.html" data-en="Home" data-zh="首页"></a>
+      <a href="services.html" data-en="Services" data-zh="服务"></a>
+      <a href="tanzania.html" data-en="Tanzania" data-zh="坦桑尼亚"></a>
+      <a href="contact.html" data-en="Contact Us" data-zh="联系我们"></a>
+      <button id="langToggle">中文</button>
+    </nav>
+
+     <button id="hamburger">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="mobile-content">
+      <span class="close-menu" onclick="closeMenu()">×</span>
+      <nav class="mobile-nav">
+        <a href="index.html" data-en="Home" data-zh="首页" onclick="closeMenu()"></a>
+        <a href="services.html" data-en="Services" data-zh="服务" onclick="closeMenu()"></a>
+        <a href="tanzania.html" data-en="Tanzania" data-zh="坦桑尼亚" onclick="closeMenu()"></a>
+        <a href="contact.html" data-en="Contact Us" data-zh="联系我们" onclick="closeMenu()"></a>
+      </nav>
+      <button id="langToggleMobile">中文</button>
+    </div>
+  </div>  
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1 style="text-align: center; font-size: 3rem; margin-bottom: 20px;" 
+        data-en="What we do!" 
+        data-zh="我们的业务!"></h1>
+
+    <div class="intro-text">
+        <p data-en="Zhongtan Dazi provides a professional bridge for businesses and individuals navigating the Tanzanian market. We specialize in simplifying complex administrative and legal hurdles, ensuring our clients can focus on growth while we handle the local compliance and strategic planning." 
+           data-zh="中坦达资为在坦桑尼亚市场发展的企业和个人提供专业的桥梁服务。我们专注于简化复杂的行政和法律障碍，确保我们的客户能够专注于业务增长，而由我们负责处理当地的合规和战略规划。"></p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3 data-en="Company Registration" data-zh="公司注册"></h3>
+        <p data-en="We assist both individuals and companies with fast, compliant company registration in Tanzania. Whether urgent or standard cases, we ensure proper setup without errors."
+           data-zh="我们为个人和企业提供快速且合规的公司注册服务，无论紧急或常规需求，确保注册过程准确无误。"></p>
+      </div>
+
+      <div class="card">
+        <h3 data-en="Legal Services" data-zh="法律服务"></h3>
+        <p data-en="We provide legal support for contracts, disputes, and compliance. We are a private firm, not part of the government, but we work closely with official institutions to ensure correct procedures."
+           data-zh="我们提供合同、纠纷及合规方面的法律支持。我们是私人机构，不隶属于政府，但与相关部门保持合作以确保流程合规。"></p>
+      </div>
+
+      <div class="card">
+        <h3 data-en="Tax & Auditing" data-zh="税务与审计"></h3>
+        <p data-en="We handle tax planning, filing, and auditing for individuals and companies. Our approach ensures accuracy, compliance, and protection from unnecessary penalties."
+           data-zh="我们为个人和企业提供税务规划、申报及审计服务，确保准确合规并避免不必要的处罚。"></p>
+      </div>
+
+      <div class="card">
+        <h3 data-en="Investment Guidance" data-zh="投资指导"></h3>
+        <p data-en="We guide foreign clients through Tanzania investment laws, procedures, and risks. We provide clear information so you can make safe and informed decisions."
+           data-zh="我们为外国客户提供坦桑尼亚投资法律、流程及风险方面的指导，帮助您做出安全且明智的决策。"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+    <div class="container">
+      <h2 style="text-align: center;" data-en="Why Choose Us" data-zh="为什么选择我们"></h2>
+      <ul>
+        <li data-en="Local Tanzanian experts" data-zh="本地坦桑尼亚专业团队"></li>
+        <li data-en="Chinese-speaking support" data-zh="提供中文沟通支持"></li>
+        <li data-en="Fast response for urgent cases" data-zh="紧急情况快速响应"></li>
+        <li data-en="Deep understanding of local laws" data-zh="深入了解当地法律法规"></li>
+      </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+      <div class="testimonial-box">
+        <div class="testimonial active">
+          <div class="stars">★★★★★</div>
+          <p>“中坦达资服务非常专业，我们公司注册很顺利完成，效率很高。以后一定继续合作。”</p>
+          <div class="user"><div class="avatar"></div><span>张伟</span></div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“他们很耐心，一步一步帮我处理问题，让人很放心。”</p>
+          <div class="user"><div class="avatar"></div><span>李强</span></div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>“Very reliable service. They handled everything correctly.”</p>
+          <div class="user"><div class="avatar"></div><span>Mr. Liu</span></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<footer class="footer">
+  <p>
+    <a href="#" onclick="openTerms()" data-en="Terms & Conditions" data-zh="条款和条件">Terms & Conditions</a> |
+    <a href="#" onclick="openPrivacy()" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a>
+  </p>
+   <p>Dar es Salaam, Tanzania  ©️ 2026 中坦达资</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
