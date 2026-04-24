@@ -1,3 +1,4 @@
+/* --- 1. VARIABLES & CORE SETTINGS --- */
 :root {
     --navy: #0b1e3c;
     --navy-light: #123a6f;
@@ -13,11 +14,6 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-html {
-    font-size: 16px;
-    -webkit-text-size-adjust: 100%;
-}
-
 body {
     background: var(--navy);
     color: var(--white);
@@ -29,10 +25,9 @@ body {
     width: 85%;
     max-width: 1200px;
     margin: auto;
-    padding: 0 15px;
 }
 
-/* HEADER */
+/* --- 2. SHARED HEADER & NAVIGATION --- */
 .header {
     background: var(--navy);
     padding: 15px 0;
@@ -53,21 +48,15 @@ body {
     align-items: center;
     text-decoration: none;
     color: inherit;
-    gap: 10px;
 }
 
 .logo img {
-    height: 50px;
-    width: auto;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+    height: 60px;
+    margin-right: 15px;
 }
 
 nav a {
+    margin: 0 15px;
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
@@ -78,114 +67,59 @@ nav a:hover {
     color: var(--paleblue);
 }
 
-#hamburger {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-/* MOBILE MENU */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--navy);
-    z-index: 9999;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.mobile-menu.active {
-    display: flex;
-}
-
-.mobile-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 0;
-}
-
-.close-menu {
-    align-self: flex-start;
-    font-size: 2.5rem;
-    color: var(--white);
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.mobile-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-}
-
-.mobile-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-/* HERO */
+/* --- 3. HERO & SECTIONS --- */
 .hero {
-    height: 60vh;
+    height: 70vh;
     background: linear-gradient(rgba(11,30,60,0.7), rgba(11,30,60,0.85)), 
                 url('images/1.jpg') no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    opacity: 0.95;
-}
-
-/* SECTIONS */
 .section {
-    padding: 60px 20px;
+    padding: 80px 0;
 }
 
 .dark {
     background: var(--navy-light);
 }
 
-/* GRID */
+/* --- 4. GRID & CARDS (Universal) --- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+.card {
+    background: var(--navy-light);
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--paleblue);
+    box-shadow: var(--shadow);
+}
+
+/* --- 5. STATS & COUNTERS --- */
 .stat {
     text-align: center;
 }
 
 .counter {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: var(--paleblue);
+    display: block;
 }
 
-/* BUTTONS */
-button, .btn, .btn-download {
+/* --- 6. BUTTONS & INTERACTIVES --- */
+button, .btn, .btn-download, input[type="submit"] {
     background: var(--white);
     color: var(--navy);
     border: none;
@@ -198,138 +132,310 @@ button, .btn, .btn-download {
     transition: all 0.3s ease;
 }
 
-button:hover, .btn:hover {
+button:hover, .btn:hover, input[type="submit"]:hover {
     background: var(--paleblue);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.btn-large {
-    padding: 16px 32px;
-    font-size: 1.1rem !important;
+/* --- 7. TEAM & LEADERSHIP --- */
+.member-card {
+    background: var(--navy-light);
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 5px solid var(--paleblue);
 }
 
-.button-container {
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--white);
+}
+
+.member-name { color: var(--white); font-size: 1.5rem; margin-bottom: 5px; }
+.member-position { color: var(--paleblue); font-weight: bold; display: block; margin-bottom: 15px; }
+.member-desc { font-size: 0.9rem; opacity: 0.9; }
+
+/* --- 8. TESTIMONIALS --- */
+.testimonial-box {
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    height: 180px;
+    border: 2px solid var(--paleblue);
+    border-radius: 15px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.testimonial {
+    position: absolute;
+    width: calc(100% - 60px);
+    opacity: 0;
+    transition: all 0.8s ease;
+    text-align: center;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+/* --- 9. TANZANIA OPPORTUNITY CARDS --- */
+.opportunity-card {
+    background: var(--navy-light);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.opp-image { width: 100%; height: 200px; object-fit: cover; }
+.opp-content { padding: 20px; }
+.tag {
+    background: var(--paleblue);
+    color: var(--navy);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- 10. FORMS & CONTACT --- */
+.form-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-box input, .form-box select, .form-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: var(--navy);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-radius: 6px;
+}
+
+/* --- 11. DOWNLOADS --- */
+.downloads-box {
+    background: var(--navy-light);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.download-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 50px 20px;
+    gap: 20px;
     flex-wrap: wrap;
-    background: var(--navy);
+    margin-top: 20px;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 30px 20px;
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer a {
-    color: var(--paleblue);
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-/* POPUPS */
+/* --- 12. POPUPS --- */
 .popup {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(11, 30, 60, 0.95);
     z-index: 2000;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup.active {
-    display: flex;
 }
 
 .popup-content {
     background: var(--navy-light);
-    padding: 30px;
+    padding: 40px;
     width: 90%;
     max-width: 500px;
+    margin: 10% auto;
     border-radius: 10px;
     position: relative;
 }
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
+    top: 15px; right: 20px;
+    font-size: 30px;
     cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--white);
 }
 
-/* TABLET */
-@media (max-width: 768px) {
-    #hamburger {
-        display: block;
-    }
+/* --- 13. FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
 
+.footer a { color: var(--paleblue); text-decoration: none; margin: 0 10px; }
+
+/* --- GLOBAL SCALING RESET --- */
+html {
+    font-size: 16px; /* Base for rem calculations */
+}
+
+/* --- 14. MOBILE NAVIGATION & LAYOUT (iOS & Android) --- */
+
+@media (max-width: 768px) {
+    /* Hide Desktop Nav and Show Hamburger */
     nav {
         display: none !important;
     }
 
+    #hamburger {
+        display: block !important;
+        font-size: 1.75rem; /* Scales with device */
+        background: none;
+        color: var(--white);
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* FULL SCREEN MOBILE MENU OVERHAUL */
+    .mobile-menu {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--navy); 
+        z-index: 9999;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    /* Elegant "X" Close Button */
+    .close-menu {
+        align-self: flex-end; /* Modern alignment */
+        font-size: 3rem; /* Large and clear */
+        color: var(--white);
+        cursor: pointer;
+        line-height: 1;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+
+    /* Centered, Well-Spaced Menu Links */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem; /* Increased gap for better tap accuracy */
+        flex-grow: 1;
+    }
+
+    .mobile-nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 2.2rem; /* Substantial and premium feel */
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: opacity 0.2s;
+    }
+
+    .mobile-nav a:active {
+        opacity: 0.7;
+        color: var(--paleblue);
+    }
+
+    #langToggleMobile {
+        margin: 2rem auto;
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        background: var(--white);
+        color: var(--navy);
+        font-weight: bold;
+        width: fit-content;
+    }
+
+    /* --- HERO SECTION --- */
+    
     .hero {
-        height: 50vh;
+        height: 75vh; /* Balanced height for mobile */
+        padding: 0 1.5rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem !important; /* Larger than before for impact */
+        line-height: 1.2;
+        margin-bottom: 1.2rem;
+        font-weight: 800;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem !important;
+        line-height: 1.5;
+        opacity: 0.9;
     }
 
+    /* --- THE HOME BUTTON ROW (2 Columns) --- */
+    
     .button-container {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Locked 2-column grid */
+        gap: 1rem; /* Balanced gap */
+        padding: 3rem 1.2rem;
+        width: 100%;
     }
 
-    .btn, .btn-large {
+    .btn-large {
+        padding: 1rem 0.5rem !important; /* Vertical padding kept for "thicker" buttons */
+        font-size: 0.95rem !important; /* Slightly larger for readability */
+        font-weight: 700;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* --- OTHER MOBILE ADJUSTMENTS --- */
+    
+    .container {
+        width: 90%;
+    }
+
+    .section {
+        padding: 4rem 0; /* Reduced padding for mobile vertical flow */
+    }
+
+    .testimonial-box {
+        height: auto; /* Let it grow with content */
+        min-height: 250px;
+        padding: 2rem 1.5rem;
+    }
+
+    .member-card {
         width: 100%;
+        margin-bottom: 2rem;
     }
 }
 
-/* MOBILE */
-@media (max-width: 480px) {
-    html {
-        font-size: 14px;
-    }
-
-    .hero {
-        height: 45vh;
-        padding: 15px;
-    }
-
+/* Specific optimization for very narrow devices (iPhone SE / Small Androids) */
+@media (max-width: 375px) {
     .hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem !important;
     }
-
-    .hero p {
-        font-size: 0.95rem;
+    .btn-large {
+        font-size: 0.85rem !important; /* Prevents overflow on tiny screens */
     }
-
-    .counter {
+    .mobile-nav a {
         font-size: 1.8rem;
-    }
-
-    .btn, .btn-large {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-    }
-
-    .button-container {
-        gap: 10px;
-        padding: 25px 15px;
     }
 }
