@@ -287,26 +287,68 @@ button:hover, .btn:hover, input[type="submit"]:hover {
     color: white;
 }
 
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: var(--navy);
-    z-index: 3000;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* --- OVERHAULED FULL-SCREEN MOBILE MENU --- */
 
-.mobile-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-}
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: none; /* JS will toggle this to 'flex' */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--navy); 
+        z-index: 9999;
+        flex-direction: column;
+        padding: 40px 20px; /* Padding for the inner content */
+    }
 
-.mobile-nav a { font-size: 1.5rem; }
+    /* Create a header area inside the menu for the X button */
+    .mobile-menu .close-menu {
+        align-self: flex-end; /* Puts X on the top right */
+        font-size: 45px;
+        color: var(--white);
+        cursor: pointer;
+        line-height: 1;
+        margin-bottom: 50px; /* Space between X and the first link */
+    }
+
+    /* Navigation Link Container */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center links horizontally */
+        justify-content: center;
+        gap: 40px; /* Generous spacing between menu items */
+        flex-grow: 1; /* Pushes links to the center of the screen */
+    }
+
+    .mobile-nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 2.2rem; /* Large, readable mobile text */
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-nav a:active {
+        transform: scale(0.95);
+        color: var(--paleblue);
+    }
+
+    /* Language Toggle at the Bottom */
+    #langToggleMobile {
+        margin: 40px auto;
+        padding: 12px 50px;
+        font-size: 1.1rem;
+        border-radius: 30px; /* Rounded pill shape */
+        background: var(--white);
+        color: var(--navy);
+        border: none;
+        font-weight: bold;
+    }
+}
 
 @media (max-width: 768px) {
     nav { display: none; }
