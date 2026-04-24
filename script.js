@@ -56,8 +56,8 @@ function closeTerms() { document.getElementById("termsPopup").style.display = "n
 function openPrivacy() { document.getElementById("privacyPopup").style.display = "block"; }
 function closePrivacy() { document.getElementById("privacyPopup").style.display = "none"; }
 
-function openMenu() { document.getElementById("mobileMenu").classList.add("active"); }
-function closeMenu() { document.getElementById("mobileMenu").classList.remove("active"); }
+function openMenu() { document.getElementById("mobileMenu").style.display = "flex"; }
+function closeMenu() { document.getElementById("mobileMenu").style.display = "none"; }
 
 if(document.getElementById("hamburger")) {
     document.getElementById("hamburger").onclick = openMenu;
